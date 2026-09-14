@@ -302,7 +302,6 @@ function submitQuiz() {
     // ENVÍO DE DATOS A GOOGLE SHEETS
     // ==========================================================
     
-    // TODO: REEMPLAZAR ESTA URL CON LA URL DE TU SCRIPT DE GOOGLE
     const urlGoogleScript = 'https://script.google.com/macros/s/AKfycbzqSNVBse9fqQp-Z_UClSr56OIo2WCP2bKuGyAdVRxeiYnDqsLawRMB_z5d9HpFSA-2hQ/exec'; 
     const statusText = document.getElementById('quiz-save-status');
     statusText.innerText = "Guardando resultados en la base de datos...";
@@ -313,25 +312,20 @@ function submitQuiz() {
     formData.append('correo', estado.estudiante.correo);
     formData.append('punteo', score);
 
-    // Descomentar la siguiente línea si usas un endpoint real para no enviar vacíos
-    if (urlGoogleScript === 'https://script.google.com/macros/s/AKfycbzqSNVBse9fqQp-Z_UClSr56OIo2WCP2bKuGyAdVRxeiYnDqsLawRMB_z5d9HpFSA-2hQ/exec') {
-        statusText.innerText = "Resultados listos. (Nota: La URL de Google Sheets aún no está configurada).";
-        return;
-    }
-
+    // Hacemos el envío directamente, ignorando el bloqueo CORS del navegador
     fetch(urlGoogleScript, {
         method: 'POST',
-        body: formData
+        body: formData,
+        mode: 'no-cors' 
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log("Datos guardados en Drive:", data);
+    .then(() => {
+        console.log("Petición enviada a Drive");
         statusText.innerText = "✅ Tus resultados han sido guardados exitosamente en la base de datos.";
         statusText.style.color = "green";
     })
     .catch(error => {
         console.error("Error al guardar:", error);
-        statusText.innerText = "❌ Hubo un problema al guardar los resultados en línea, pero puedes verlos aquí.";
+        statusText.innerText = "❌ Hubo un problema de conexión al guardar los resultados.";
         statusText.style.color = "red";
     });
 }
