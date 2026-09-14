@@ -303,7 +303,7 @@ function submitQuiz() {
     // ==========================================================
     
     // TODO: REEMPLAZAR ESTA URL CON LA URL DE TU SCRIPT DE GOOGLE
-    const urlGoogleScript = 'PEGA_AQUÍ_TU_URL_DE_APPS_SCRIPT'; 
+    const urlGoogleScript = 'https://script.google.com/macros/s/AKfycbzqSNVBse9fqQp-Z_UClSr56OIo2WCP2bKuGyAdVRxeiYnDqsLawRMB_z5d9HpFSA-2hQ/exec'; 
     const statusText = document.getElementById('quiz-save-status');
     statusText.innerText = "Guardando resultados en la base de datos...";
     
