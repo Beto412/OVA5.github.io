@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OVA: Elementos de la Educación a Distancia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Barra de Navegación Lateral -->
+        <nav id="sidebar">
+            <h2>Menú OVA</h2>
+            <ul id="nav-links">
+                <li><button onclick="nav('inicio')" class="nav-btn active" data-target="inicio">1. Inicio</button></li>
+                <li><button onclick="nav('competencia')" class="nav-btn" data-target="competencia" disabled>2. Competencia</button></li>
+                <li><button onclick="nav('mapa')" class="nav-btn" data-target="mapa" disabled>3. Mapa Interactivo</button></li>
+                <li><button onclick="nav('pedagogia')" class="nav-btn" data-target="pedagogia" disabled>4. Pedagogía</button></li>
+                <li><button onclick="nav('comunicacion')" class="nav-btn" data-target="comunicacion" disabled>5. Comunicación</button></li>
+                <li><button onclick="nav('tecnologia')" class="nav-btn" data-target="tecnologia" disabled>6. Tecnología</button></li>
+                <li><button onclick="nav('caso')" class="nav-btn" data-target="caso" disabled>7. Caso Práctico</button></li>
+                <li><button onclick="nav('registro')" class="nav-btn" data-target="registro" disabled>8. Evaluación Final</button></li>
+            </ul>
+            <div class="progress-container">
+                <p>Progreso del Estudiante: <span id="progress-text">0%</span></p>
+                <div class="progress-bar"><div id="progress-fill"></div></div>
+            </div>
+            <div id="badges-container">
+                <h3>Tus Insignias</h3>
+                <div id="badges">
+                    <p id="no-badges" style="font-size:0.8rem; color:#ccc;">Aún no tienes insignias.</p>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenido Principal -->
+        <main id="content">
+            <!-- SECCIÓN: Inicio -->
+            <section id="inicio" class="section active">
+                <div class="hero">
+                    <h1>Elementos de la Educación a Distancia</h1>
+                    <h2>Comprende, relaciona y aplica los componentes que hacen posible una experiencia educativa virtual.</h2>
+                    <div class="hero-icons">
+                        <div class="icon-box">🧑‍🏫<span>PEDAGÓGICO</span></div>
+                        <div class="icon-box">💬<span>COMUNICATIVO</span></div>
+                        <div class="icon-box">💻<span>TECNOLÓGICO</span></div>
+                    </div>
+                    
+                    <div class="credits">
+                        <h3>Desarrollado por Grupo 5</h3>
+                        <ul>
+                            <li>Daisy Marlene Franco Alvarez, carné: 200516792</li>
+                            <li>Hilda Mariela Ortiz Itzep, carné: 202544650</li>
+                            <li>Rubén Adalberto Calderón Parada, carné: 200010932</li>
+                        </ul>
+                    </div>
+
+                    <button class="btn-primary" onclick="unlockAndNav('competencia')">COMENZAR OVA</button>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: Competencia -->
+            <section id="competencia" class="section">
+                <h2>¿Qué aprenderás?</h2>
+                <div class="card competence-card">
+                    <h3>Competencia Principal</h3>
+                    <p>"Identifica cada uno de los elementos de la educación a distancia y comprende la necesidad de cada uno de los roles que hay dentro de ella, para implementarlos correctamente según el rol que desempeñe."</p>
+                </div>
+                <h3>Objetivos de Aprendizaje (Haz clic en las tarjetas)</h3>
+                <div class="grid-cards">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">🎯 Identificar</div>
+                            <div class="flip-card-back">Componentes pedagógicos, la comunidad educativa, tipos de comunicación y herramientas TIC.</div>
+                        </div>
+                    </div>
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">🧠 Diferenciar</div>
+                            <div class="flip-card-back">Contenidos vs. recursos. Estrategias de enseñanza vs. aprendizaje. Evaluación diagnóstica, formativa y sumativa.</div>
+                        </div>
+                    </div>
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">⚙️ Integrar</div>
+                            <div class="flip-card-back">Capacidad de reunir todos los componentes en una situación educativa virtual realista.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-controls">
+                    <button class="btn-secondary" onclick="nav('inicio')">Anterior</button>
+                    <button class="btn-primary" onclick="unlockAndNav('mapa')">INICIAR APRENDIZAJE</button>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: Mapa Interactivo -->
+            <section id="mapa" class="section">
+                <h2>Mapa Interactivo de los Elementos</h2>
+                <p>Haz clic en cada componente para explorar su contenido. ¡Iniciemos por el Pedagógico!</p>
+                <div class="tree-map">
+                    <div class="tree-root">EDUCACIÓN A DISTANCIA</div>
+                    <div class="tree-line"></div>
+                    <div class="tree-branches">
+                        <div class="tree-branch" onclick="unlockAndNav('pedagogia')">
+                            <h3>Pedagógico</h3>
+                            <ul><li>Comunidad</li><li>Contenidos</li><li>Recursos</li><li>Estrategias</li><li>Evaluación</li></ul>
+                        </div>
+                        <div class="tree-branch" onclick="alert('Completa primero el módulo pedagógico para continuar estructuradamente, o usa el menú lateral si ya está desbloqueado.')">
+                            <h3>Comunicativo</h3>
+                            <ul><li>Sincrónico</li><li>Asincrónico</li></ul>
+                        </div>
+                        <div class="tree-branch" onclick="alert('Completa primero los módulos anteriores.')">
+                            <h3>Tecnológico</h3>
+                            <ul><li>Plataformas educativas</li><li>TIC</li><li>Informática educativa</li></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-controls">
+                    <button class="btn-secondary" onclick="nav('competencia')">Anterior</button>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: Pedagogía -->
+            <section id="pedagogia" class="section">
+                <h2>El corazón pedagógico</h2>
+                <p>Los componentes pedagógicos constituyen una parte fundamental del proceso de enseñanza-aprendizaje en la modalidad a distancia.</p>
+                
+                <h3>A. Comunidad Educativa</h3>
+                <div class="grid-cards">
+                    <div class="card">
+                        <div class="icon-title">🏢 Administrador Educativo</div>
+                        <p><strong>Función:</strong> Gestión, liderazgo y resolución de problemas.</p>
+                        <p><strong>Importancia:</strong> Gestiona procesos de cambio e innovación institucional.</p>
+                        <p><em>Ejemplo: Coordina la plataforma y horarios del programa virtual.</em></p>
+                    </div>
+                    <div class="card">
+                        <div class="icon-title">👩‍🏫 Docente</div>
+                        <p><strong>Función:</strong> Facilitador, orientador y guía.</p>
+                        <p><strong>Importancia:</strong> Diseña experiencias y acompaña el proceso formativo.</p>
+                        <p><em>Ejemplo: Crea actividades interactivas y modera los foros.</em></p>
+                    </div>
+                    <div class="card">
+                        <div class="icon-title">🎓 Estudiante</div>
+                        <p><strong>Función:</strong> Protagonista y centro del aprendizaje.</p>
+                        <p><strong>Importancia:</strong> Tiene responsabilidad sobre su proceso de autoformación.</p>
+                        <p><em>Ejemplo: Organiza su tiempo para completar lecturas y entregas.</em></p>
+                    </div>
+                    <div class="card">
+                        <div class="icon-title">👨‍👩‍👧 Padres de Familia</div>
+                        <p><strong>Función:</strong> Apoyo educativo y motivacional.</p>
+                        <p><strong>Importancia:</strong> Clave para la permanencia y acompañamiento del alumno.</p>
+                        <p><em>Ejemplo: Fomenta un ambiente de estudio adecuado en casa.</em></p>
+                    </div>
+                </div>
+
+                <h3>B. Del documento físico al contenido digital</h3>
+                <div class="sequence-animation">
+                    <span>📄 Documento Físico</span> ➔ 
+                    <span>💻 Documento Electrónico</span> ➔ 
+                    <span>🎬 Multimedia</span> ➔ 
+                    <span>🔗 Hipermedia</span> ➔ 
+                    <span>🖱️ Interacción</span>
+                </div>
+                <p>Los contenidos se organizan en unidades didácticas utilizando textos, audios, videos e imágenes interactivos.</p>
+
+                <h3>C. La caja de herramientas (Recursos Educativos)</h3>
+                <div class="resources-grid">
+                    <div class="resource-item" onclick="showResource('Libros', 'Lectura de fondo y análisis crítico.', 'Accesible sin internet.', 'Puede desactualizarse rápido.')">Libros</div>
+                    <div class="resource-item" onclick="showResource('Radio', 'Difusión masiva de programas educativos.', 'Llega a zonas remotas.', 'Unidireccional.')">Radio</div>
+                    <div class="resource-item" onclick="showResource('Cine/Video', 'Ilustrar conceptos complejos visualmente.', 'Muy motivador.', 'Requiere equipo y producción.')">Video/Cine</div>
+                    <div class="resource-item" onclick="showResource('Videoconferencia', 'Clases magistrales y tutorías en tiempo real.', 'Interacción directa.', 'Requiere buen ancho de banda.')">Videoconferencia</div>
+                </div>
+
+                <h3>D. Estrategias Didácticas</h3>
+                <div class="split-screen">
+                    <div class="split-half">
+                        <h4>Estrategias de Enseñanza</h4>
+                        <p><strong>Aplicadas por:</strong> El Docente.</p>
+                        <p>Recursos y acciones pedagógicas para facilitar el conocimiento.</p>
+                    </div>
+                    <div class="split-half">
+                        <h4>Estrategias de Aprendizaje</h4>
+                        <p><strong>Aplicadas por:</strong> El Estudiante.</p>
+                        <p>Procedimientos, pasos y habilidades cognitivas para procesar información.</p>
+                    </div>
+                </div>
+                <div class="activity-box">
+                    <h4>Actividad: ¿Quién utiliza esta estrategia?</h4>
+                    <p>"Aplicación de técnicas de subrayado y mapas mentales para estudiar un tema."</p>
+                    <button class="btn-secondary" onclick="checkActivity('strategy', 'estudiante')">DOCENTE</button>
+                    <button class="btn-secondary" onclick="checkActivity('strategy', 'correcto')">ESTUDIANTE</button>
+                    <p id="strategy-feedback" class="feedback"></p>
+                </div>
+
+                <h3>E. Evaluación del Aprendizaje</h3>
+                <div class="timeline">
+                    <div class="time-step"><strong>ANTES:</strong> Diagnóstica<br><em>Identificar conocimientos previos.</em></div>
+                    <div class="time-step"><strong>DURANTE:</strong> Formativa<br><em>Seguimiento y retroalimentación.</em></div>
+                    <div class="time-step"><strong>DESPUÉS:</strong> Sumativa<br><em>Verificar logro de competencias.</em></div>
+                </div>
+                <div class="activity-box">
+                    <h4>Actividad: Clasifica la Evaluación</h4>
+                    <p>"El docente proporciona retroalimentación mientras el estudiante desarrolla un ensayo."</p>
+                    <button class="btn-secondary" onclick="checkActivity('eval', 'incorrecto')">DIAGNÓSTICA</button>
+                    <button class="btn-secondary" onclick="checkActivity('eval', 'correcto')">FORMATIVA</button>
+                    <button class="btn-secondary" onclick="checkActivity('eval', 'incorrecto')">SUMATIVA</button>
+                    <p id="eval-feedback" class="feedback"></p>
+                </div>
+
+                <div class="nav-controls">
+                    <button class="btn-secondary" onclick="nav('mapa')">Anterior</button>
+                    <button class="btn-primary" onclick="unlockAndNav('comunicacion')">Siguiente: Comunicación</button>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: Comunicación -->
+            <section id="comunicacion" class="section">
+                <h2>La comunicación evita el aislamiento</h2>
+                
+                <div class="split-screen">
+                    <div class="split-half" ondrop="drop(event, 'sincronico')" ondragover="allowDrop(event)">
+                        <h3>Sincrónico</h3>
+                        <p>Comunicación en la que los participantes comparten el mismo momento temporal.</p>
+                        <div class="drop-zone" id="zone-sync"></div>
+                    </div>
+                    <div class="split-half" ondrop="drop(event, 'asincronico')" ondragover="allowDrop(event)">
+                        <h3>Asincrónico</h3>
+                        <p>Permite la interacción sin compartir la misma línea de tiempo (flexibilidad).</p>
+                        <div class="drop-zone" id="zone-async"></div>
+                    </div>
+                </div>
+
+                <div class="activity-box mt-2">
+                    <h4>Actividad: Clasifica las herramientas (Arrastra y suelta)</h4>
+                    <div class="draggable-items">
+                        <div class="drag-item" draggable="true" ondragstart="drag(event)" id="item-chat" data-type="sincronico">💬 Chat</div>
+                        <div class="drag-item" draggable="true" ondragstart="drag(event)" id="item-correo" data-type="asincronico">📧 Correo Electrónico</div>
+                        <div class="drag-item" draggable="true" ondragstart="drag(event)" id="item-video" data-type="sincronico">🎥 Videoconferencia</div>
+                        <div class="drag-item" draggable="true" ondragstart="drag(event)" id="item-foro" data-type="asincronico">💬 Foros de Discusión</div>
+                    </div>
+                    <button class="btn-primary mt-2" onclick="checkDragAndDrop()">Comprobar Clasificación</button>
+                    <p id="drag-feedback" class="feedback"></p>
+                </div>
+
+                <div class="nav-controls">
+                    <button class="btn-secondary" onclick="nav('pedagogia')">Anterior</button>
+                    <button class="btn-primary" onclick="unlockAndNav('tecnologia')">Siguiente: Tecnología</button>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: Tecnología -->
+            <section id="tecnologia" class="section">
+                <h2>La tecnología como entorno de aprendizaje</h2>
+                
+                <div class="platform-schema">
+                    <span class="pill">Contenidos</span> + 
+                    <span class="pill">Comunicación</span> + 
+                    <span class="pill">Evaluación</span> + 
+                    <span class="pill">Seguimiento</span> + 
+                    <span class="pill">Gestión</span>
+                    <br><strong>= PLATAFORMA EDUCATIVA</strong>
+                </div>
+
+                <h3>Clasificación de Plataformas Educativas</h3>
+                <div class="split-screen mt-2">
+                    <div class="split-half software-libre">
+                        <h4>Software Libre</h4>
+                        <ul><li>Moodle</li><li>Autotor</li><li>Caroline</li><li>Ilias</li><li>Mimerdesk</li></ul>
+                    </div>
+                    <div class="split-half software-comercial">
+                        <h4>Software Comercial</h4>
+                        <ul><li>Blackboard</li><li>Web CT</li><li>Lotus Learning Space</li><li>First Class</li><li>Top Class</li><li>Campus Virtual / E-learning</li></ul>
+                    </div>
+                </div>
+
+                <div class="activity-box mt-2">
+                    <h3>¿Qué aportan las TIC?</h3>
+                    <p>Las TIC han evolucionado de la simple transmisión de información hacia formas ricas de comunicación e interacción educativa, favoreciendo las <strong>Comunidades Virtuales de Aprendizaje</strong> (Personas + Interacción + Proyecto + TIC).</p>
+                    
+                    <h4>Actividad: Balance de la Informática Educativa</h4>
+                    <p>Haz clic para descubrir qué elementos son ventajas y cuáles son retos:</p>
+                    <div class="balance-grid">
+                        <button class="btn-secondary" onclick="alert('¡VENTAJA! Permite al estudiante aprender a su propio paso.')">Adaptación al ritmo</button>
+                        <button class="btn-secondary" onclick="alert('¡RETO! Requiere tiempo y recursos de la institución para capacitar a los tutores.')">Capacitación docente</button>
+                        <button class="btn-secondary" onclick="alert('¡VENTAJA! Estimula el deseo de aprender a través de medios digitales.')">Motivación</button>
+                        <button class="btn-secondary" onclick="alert('¡RETO! Requiere planificación profunda antes de lanzar el curso.')">Análisis profesional previo</button>
+                    </div>
+                </div>
+
+                <div class="nav-controls">
+                    <button class="btn-secondary" onclick="nav('comunicacion')">Anterior</button>
+                    <button class="btn-primary" onclick="unlockAndNav('caso')">Siguiente: Caso Práctico</button>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: Caso Práctico -->
+            <section id="caso" class="section">
+                <h2>Caso Práctico: Diseña tu aula virtual</h2>
+                <div class="card competence-card">
+                    <p><strong>Situación:</strong> Una universidad desea implementar un curso completamente virtual. Tienen docentes y estudiantes, pero aún deben definir cómo operar. Como experto, elige las mejores opciones para construir el aula virtual.</p>
+                </div>
+                
+                <form id="caso-form" class="mt-2" onsubmit="event.preventDefault(); checkCaso();">
+                    <label>1. ¿Cómo organizar y presentar los contenidos de forma digital?</label>
+                    <select id="caso-1" required>
+                        <option value="">Selecciona una opción...</option>
+                        <option value="correcto">Unidades didácticas interactivas con recursos multimedia (hipermedia)</option>
+                        <option value="incorrecto">Enviar resúmenes fotocopiados por servicio postal</option>
+                    </select>
+
+                    <label>2. ¿Cómo evaluar de manera continua durante el desarrollo del curso?</label>
+                    <select id="caso-2" required>
+                        <option value="">Selecciona una opción...</option>
+                        <option value="incorrecto">Evaluación Sumativa exclusivamente al final del ciclo</option>
+                        <option value="correcto">Evaluación Formativa utilizando retroalimentación en actividades semanales</option>
+                    </select>
+
+                    <label>3. ¿Qué herramienta comunicativa utilizar para tutorías en vivo (mismo tiempo)?</label>
+                    <select id="caso-3" required>
+                        <option value="">Selecciona una opción...</option>
+                        <option value="correcto">Comunicación sincrónica vía Videoconferencia</option>
+                        <option value="incorrecto">Comunicación asincrónica vía Foro de Discusión</option>
+                    </select>
+
+                    <label>4. La institución no cuenta con presupuesto para licencias, ¿qué plataforma sugieres?</label>
+                    <select id="caso-4" required>
+                        <option value="">Selecciona una opción...</option>
+                        <option value="incorrecto">Blackboard (Software comercial)</option>
+                        <option value="correcto">Moodle (Software libre)</option>
+                    </select>
+
+                    <button type="submit" class="btn-primary mt-2">Verificar Solución</button>
+                    <p id="caso-feedback" class="feedback"></p>
+                </form>
+
+                <div class="nav-controls mt-2">
+                    <button class="btn-secondary" onclick="nav('tecnologia')">Anterior</button>
+                    <button class="btn-primary" onclick="unlockAndNav('registro')" id="btn-next-registro" style="display:none;">Ir a Evaluación Final</button>
+                </div>
+            </section>
+
+            <!-- SECCIÓN: Registro para Evaluación -->
+            <section id="registro" class="section">
+                <h2>Comprobación de Aprendizaje</h2>
+                <p>Estás a punto de iniciar la evaluación final. Por favor, ingresa tus datos institucionales para registrar tus resultados.</p>
+                
+                <form id="registro-form" class="card mt-2" style="max-width: 500px; margin: 0 auto;" onsubmit="event.preventDefault(); startQuiz();">
+                    <label>Nombre Completo:</label>
+                    <input type="text" id="r-nombre" placeholder="Ej. Juan Pérez" required>
+                    
+                    <label>Número de Carné:</label>
+                    <input type="number" id="r-carnet" placeholder="Ej. 202600123" required>
+                    
+                    <label>Correo Electrónico:</label>
+                    <input type="email" id="r-correo" placeholder="ejemplo@correo.com" required>
+                    
+                    <button type="submit" class="btn-primary mt-2" style="width:100%;">Iniciar Evaluación Final</button>
+                </form>
+            </section>
+
+            <!-- SECCIÓN: Evaluación Final -->
+            <section id="evaluacion" class="section">
+                <h2>Evaluación Final</h2>
+                <div class="card mb-2" style="background:#e8f4f8;">
+                    <p><strong>Estudiante:</strong> <span id="display-nombre"></span></p>
+                    <p><strong>Carné:</strong> <span id="display-carnet"></span></p>
+                </div>
+                
+                <div id="quiz-container">
+                    <!-- Las preguntas se generan dinámicamente con JS -->
+                </div>
+                
+                <button id="btn-submit-quiz" class="btn-primary mt-2" onclick="submitQuiz()">Enviar Respuestas y Guardar Resultado</button>
+                
+                <div id="quiz-results" class="card mt-2" style="display:none; background: #fdfbf7;">
+                    <h3>Resultados de la Evaluación</h3>
+                    <p id="quiz-score" style="font-size: 1.5rem; color: var(--blue);"></p>
+                    <p id="quiz-msg" style="font-weight: bold;"></p>
+                    <p id="quiz-save-status" style="font-style: italic; color: #666; font-size: 0.9rem; margin-top: 10px;"></p>
+                    <div id="quiz-feedback" class="mt-2" style="font-size: 0.9rem;"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal para Recursos -->
+    <div id="resource-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p><strong>¿Qué es / Cómo se usa?</strong> <span id="modal-desc"></span></p>
+            <p style="color: green;"><strong>Ventaja:</strong> <span id="modal-adv"></span></p>
+            <p style="color: red;"><strong>Desventaja o reto:</strong> <span id="modal-dis"></span></p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
